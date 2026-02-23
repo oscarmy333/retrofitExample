@@ -1,7 +1,7 @@
 package com.example.retrofitEjemplo.controller;
 
-import com.example.retrofitEjemplo.model.Post;
-import com.example.retrofitEjemplo.service.PostService;
+import com.example.retrofitEjemplo.model.User;
+import com.example.retrofitEjemplo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,20 +12,20 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("v1/posts")
-public class PostController {
+@RequestMapping("v1/users")
+public class UserController {
 
     @Autowired
-    private PostService postService;
+    private UserService userService;
 
     @GetMapping()
-    public List<Post> fetchPosts(){
-        return postService.fetchPost();
+    public List<User> fetchPosts() {
+        return userService.fetchUser();
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<Post> getPost(@PathVariable("id") int id){
-        return ResponseEntity.ok(postService.getPost(id));
+    public ResponseEntity<User> getPost(@PathVariable("id") int id) {
+        return ResponseEntity.ok(userService.getUser(id));
     }
 
 }

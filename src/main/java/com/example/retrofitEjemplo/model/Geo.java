@@ -3,19 +3,15 @@ package com.example.retrofitEjemplo.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Post {
-    private int userId;
-    private int id;
-    private String title;
-    private String body;
-
+public class Geo {
+    private String lat;
+    private String lng;
 
     public String toString() {
-        return "Post id=" + id + ", userId" + userId;
+        return "Geo lat=" + lat + ", lng=" + lng;
     }
 }
